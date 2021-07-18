@@ -1,0 +1,21 @@
+{
+  "fileBindings": [
+    ["Documents", ".pdf"],
+    ["Documents", ".xlsx"],
+    ["Documents", ".docx"],
+    ["Documents", ".pptx"],
+    ["Documents", ".ppt"],
+    ["Documents", ".txt"],
+    ["Pictures", ".jpg"],
+    ["Pictures", ".jfif"],
+    ["Pictures", ".jpeg"],
+    ["Pictures", ".png"],
+    ["Pictures", ".svg"],
+    ["Pictures", ".gif"],
+    ["Music", ".mp3"],
+    ["Music", ".wma"],
+    ["Music", ".mpa"],
+    ["Music", ".mid"],
+    ["Music", ".midi"]
+  ]
+}

@@ -5,7 +5,7 @@ import json
 from ctypes import windll, wintypes
 from uuid import UUID
 
-
+# source [1] start
 class GUID(ctypes.Structure):
     # declares native C data types being used in the class
     _fields_ = [
@@ -29,7 +29,7 @@ SHGetKnownFolderPath.argtypes = [
     ctypes.POINTER(GUID), wintypes.DWORD,
     wintypes.HANDLE, ctypes.POINTER(ctypes.c_wchar_p)
 ]
-
+# source end
 
 # uuidstr values for root dirs in uuids.json
 # retrieves builtin folder path from GUID with its uuid as inp
@@ -69,3 +69,5 @@ for i in uuids["uuids"]:
 
             config.close()
 f.close()
+
+# source [1]: https://gist.github.com/mkropat/7550097

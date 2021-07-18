@@ -59,8 +59,8 @@ for i in uuids["uuids"]:
                     for u in uuids["uuids"]:
                         print(u)
                         if u["dir"] == conf[0]:
-                            src = _get_known_folder_path(uuid_id) + fel
-                            dest = _get_known_folder_path(u["id"]) + fel
+                            src = _get_known_folder_path(uuid_id) + '"' + fel + '"'
+                            dest = _get_known_folder_path(u["id"]) + '"' + fel + '"'
                             # print(src, " => ", dest)
                             os.rename(src, dest)
                             shutil.move(src, dest)

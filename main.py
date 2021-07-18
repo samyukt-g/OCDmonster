@@ -47,8 +47,9 @@ for i in uuids["uuids"]:
     if i["dir"] == "Downloads":
         uuid_id = i["id"]
         flist = os.listdir(_get_known_folder_path(uuid_id))
-
+        print(flist)
         for fel in flist:
+            print(fel)
             fel_path_info = os.path.splitext(fel)
             # print(el_path_info[0], ": ", el_path_info[1])
             config = open('config.json')
@@ -59,13 +60,13 @@ for i in uuids["uuids"]:
                     for u in uuids["uuids"]:
                         print(u)
                         if u["dir"] == conf[0]:
-                            src = _get_known_folder_path(uuid_id) + fel
-                            dest = _get_known_folder_path(u["id"]) + fel
-                            # print(src, " => ", dest)
-                            os.rename(src, dest)
+                            src = _get_known_folder_path(uuid_id) + "\\" + fel
+                            dest = _get_known_folder_path(u["id"]) + "\\" + fel
+                            print(src, " => ", dest)
+                            # os.rename(src, dest)
                             shutil.move(src, dest)
-                            os.replace(src, dest)
-                            # print("Completed...")
+                            # os.replace(src, dest)
+                            print("Completed...")
 
             config.close()
 f.close()

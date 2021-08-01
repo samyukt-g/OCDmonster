@@ -29,7 +29,6 @@ SHGetKnownFolderPath.argtypes = [
     ctypes.POINTER(GUID), wintypes.DWORD,
     wintypes.HANDLE, ctypes.POINTER(ctypes.c_wchar_p)
 ]
-# source end
 
 # uuidstr values for root dirs in uuids.json
 # retrieves builtin folder path from GUID with its uuid as inp
@@ -40,6 +39,7 @@ def _get_known_folder_path(uuidstr):
         raise ctypes.WinError()
     return pathptr.value  # path of the builtin folder
 
+# source end
 
 f = open('uuids.json',)
 uuids = json.load(f)
@@ -63,9 +63,7 @@ for i in uuids["uuids"]:
                             src = _get_known_folder_path(uuid_id) + "\\" + fel
                             dest = _get_known_folder_path(u["id"]) + "\\" + fel
                             print(src, " => ", dest)
-                            # os.rename(src, dest)
                             shutil.move(src, dest)
-                            # os.replace(src, dest)
                             print("Completed...")
 
             config.close()

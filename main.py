@@ -47,18 +47,13 @@ for i in uuids["uuids"]:
     if i["dir"] == "Downloads":
         uuid_id = i["id"]
         flist = os.listdir(_get_known_folder_path(uuid_id))
-        print(flist)
         for fel in flist:
-            print(fel)
             fel_path_info = os.path.splitext(fel)
-            # print(el_path_info[0], ": ", el_path_info[1])
             config = open('config.json')
             config_data = json.load(config)
             for conf in config_data["fileBindings"]:
                 if fel_path_info[1] == conf[1]:
-                    # print(conf[0])
                     for u in uuids["uuids"]:
-                        print(u)
                         if u["dir"] == conf[0]:
                             src = _get_known_folder_path(uuid_id) + "\\" + fel
                             dest = _get_known_folder_path(u["id"]) + "\\" + fel
